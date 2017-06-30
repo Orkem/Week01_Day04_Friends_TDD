@@ -116,6 +116,8 @@ class TestFriends < MiniTest::Test
   # 8. Find people with no friends
   def test_no_friends()
     assert_equal(["Dave"], no_friends(@people))
+    @person2[:friends].pop
+    assert_equal(["Jay", "Dave"], no_friends(@people))
   end
   # VERY tough
   # Find the people who have the same favourite tv show
